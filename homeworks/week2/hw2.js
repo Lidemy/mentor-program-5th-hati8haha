@@ -1,8 +1,11 @@
 function capitalize(str) {
-	var inputToArr = str.split('')
-	inputToArr[0] = inputToArr[0].toUpperCase()
-	output = inputToArr.join('')
-	return output
+  if (str === '') {
+    return str
+  } else {
+    const inputToArr = str.split('')
+    inputToArr[0] = inputToArr[0].toUpperCase()
+    return inputToArr.join('')
+  }
 }
 
-console.log(capitalize('hello'));
+console.log(capitalize('hello'))
