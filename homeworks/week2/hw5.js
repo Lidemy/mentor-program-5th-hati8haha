@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 function join(arr, concatStr) {
   if (arr.length === 0) {
     return ''
@@ -9,7 +10,7 @@ function join(arr, concatStr) {
     return output
   }
 }
-
+// eslint-disable-next-line
 function repeat(str, times) {
   if (str === '') {
     return str
@@ -21,6 +22,3 @@ function repeat(str, times) {
     return output
   }
 }
-
-console.log(join(['a'], '!'))
-console.log(repeat('a', 5))

@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 function capitalize(str) {
   if (str === '') {
     return str
@@ -7,5 +8,3 @@ function capitalize(str) {
     return inputToArr.join('')
   }
 }
-
-console.log(capitalize('hello'))

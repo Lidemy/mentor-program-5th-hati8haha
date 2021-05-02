@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 function printFactor(n) {
   let i = 1
   while (i <= n) {
@@ -7,5 +8,3 @@ function printFactor(n) {
     i++
   }
 }
-
-printFactor(10)
