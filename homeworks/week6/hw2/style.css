@@ -1,0 +1,92 @@
+html {
+  background-color: #ececec;
+}
+
+.wrapper {
+  display: block;
+  box-sizing: border-box;
+  max-width: 562px;
+  min-width: 100px;
+  margin: 0 auto;
+  padding: 30px 54px;
+  border-top: solid 8px #fad312;
+  margin-top: 5%;
+  margin-bottom: 3%;
+  box-shadow: 1.8px 2.4px 5px 0 rgba(0, 0, 0, 0.3);
+  background-color: white;
+}
+
+.yellow__head{
+  height: 8px;
+  background: #fad312;
+}
+
+h1 {
+  font-size: 36px;
+  font-family: MicrosoftJhengHei;
+  font-weight: bold;
+  letter-spacing: -1.8px;
+}
+
+.info {
+  font-size: 14px;
+  line-height: 1.8em;
+}
+
+.remind {
+  font-size: 16px;
+  color: #e74149;
+  margin: 20px 0px 0px 0px;
+}
+
+.question {
+  margin: 40px 0px 0px 0px;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: normal;
+  margin-bottom: 
+}
+
+.remind__symbol {
+  color: #e74149;
+}
+
+.question__radio {
+  font-size: 14px;
+}
+
+input {
+  margin-bottom: 20px;
+}
+
+.additional__explanation {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+input[type=submit] {
+  width: 92px;
+  height: 40px;
+  background-color: #fad312;
+  font-size: 15px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+input[type=submit]:hover {
+  transform: scale(1.05);
+}
+
+footer {
+  box-sizing: border-box;
+  height: 60px;
+  background: #000000;
+  color: #999999;
+  font-size: 12px;
+  text-align: center;
+  padding-top: 26px;
+}
