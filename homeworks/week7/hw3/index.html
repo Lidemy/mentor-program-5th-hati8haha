@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>To Do List</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+  <div class="wrapper">
+    <h1>To Do List</h1>
+    <div class="input-block">
+      <input type="text" name="things-to-do" id="input" placeholder="Add something to do here ^^">
+    </div>
+    <div class="list">
+      <div class="todo">
+        <label class="finish-label" name="finish">
+          <input type="checkbox" name="finish">
+          <div class="finish-hover">
+            <div class="finish-box"></div>
+          </div>
+          <div class="finish-content">（範例）</div>
+        </label>
+        <label class="delete-label" name="delete-button">
+          <div class="delete-hover"></div>
+          <button class="delete" name="delete-button"></button>
+        </label>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.querySelector('.input-block').addEventListener('keydown', (e) => {
+        const things = document.querySelector('#input').value
+        if (things === '') {
+          return
+        }
+        if (e.key === "Enter") {
+          e.preventDefault()
+          let div = document.createElement('div')
+          div.classList.add('todo')
+          div.innerHTML = `
+            <label class="finish-label" name="finish">
+              <input type="checkbox" name="finish">
+              <div class="finish-hover">
+                <div class="finish-box"></div>
+              </div>
+              <div class="finish-content">${things}</div>
+            </label>
+            <label class="delete-label" name="delete-button">
+              <div class="delete-hover"></div>
+              <button class="delete" name="delete-button"></button>
+            </label>
+`
+          document.querySelector('.list').appendChild(div)
+          document.querySelector('#input').value = ''
+        }
+      }
+    )
+
+    document.querySelector('.list').addEventListener('click',
+      (e) => {
+        if (e.target.classList.contains('delete')) {
+          document.querySelector('.list').removeChild(e.target.closest('.todo'))
+        }
+      }
+    )
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,194 @@
+body {
+  font-size: 16px;
+}
+
+.wrapper {
+  margin: 0 auto;
+  padding: 24px;
+  max-width: 680px;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  font-family: system-ui;
+  font-size: 2rem;
+  color: cadetblue;
+}
+
+.input-block {
+  width: 100%;
+}
+
+#input {
+  width: 100%;
+  font-size: 18px;
+  border-bottom-color: cadetblue;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-top-color: transparent;
+}
+
+#input:focus {
+  outline: none;
+}
+
+.todo {
+  margin: 2rem 0rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  font-family: system-ui;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.todo:hover {
+  background: #e9f3e9;
+  border-radius: 5px;
+}
+
+.finish-label {
+  display: flex;
+  width: 100%;
+  height: 1.5rem;
+  position: relative;
+  border-radius: 2px;
+  border-color: cadetblue;
+  align-items: center;
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+.finish-hover {
+  position: relative;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.finish-hover::after {
+  content: '完成';
+  position: absolute;
+  width: 2.5rem;
+  height: 1.3rem;
+  background: transparent;
+  color: transparent;
+  border-radius: 4px;
+  text-align: center;
+  z-index: 3;
+  transform: translate(0%, 0%);
+  transition: 0.5s;
+}
+
+.finish-hover:hover::after {
+  background: #5f9ea0a6;
+  color: white;
+  transform: translate(0%, -110%);
+}
+
+.finish-box {
+  height: 0.8rem;
+  width: 0.8rem;
+  border: solid 2px cadetblue;
+  border-radius: 2px;
+}
+
+input[type=checkbox]:checked + div .finish-box::after {
+  content: '';
+  position: absolute;
+  width: 20%;
+  height: 1.5px;
+  background: cadetblue;
+  top: 60%;
+  left: 35%;
+  justify-content: center;
+}
+
+input[type=checkbox]:checked + div .finish-box::before {
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 1.5px;
+  background: cadetblue;
+  top: 50%;
+  left: 55%;
+  justify-content: center;
+}
+
+.finish-box:after {
+  transform: translate(-50%, -50%) rotate(40deg);
+}
+
+.finish-box:before {
+  transform: translate(-50%, -50%) rotate(-45deg);
+  z-index: 2;
+}
+
+.finish-content {
+  padding: 1px 10px 0px;
+}
+
+.delete-label {
+  width: 1.5rem;
+  height: 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.delete {
+  display: none;
+}
+
+.delete-label:after, .delete-label:before {
+  content: '';
+  position: absolute;
+  width: 80%;
+  height: 1.5px;
+  background: cadetblue;
+  top: 50%;
+  left: 50%;
+  justify-content: center;
+}
+
+.delete-label:after {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.delete-label:before {
+  transform: translate(-50%, -50%) rotate(-45deg);
+  z-index: 2;
+}
+
+.delete-hover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.delete-hover::after {
+  content: '刪除';
+  position: absolute;
+  width: 2.5rem;
+  height: 1.3rem;
+  background: transparent;
+  color: transparent;
+  border-radius: 4px;
+  text-align: center;
+  z-index: 3;
+  transform: translate(-50%, 0%);
+  margin-left: 50%;
+  transition: 0.5s;
+}
+
+.delete-hover:hover::after {
+  background: #5f9ea0a6;
+  color: white;
+  transform: translate(-50%, -110%);
+}

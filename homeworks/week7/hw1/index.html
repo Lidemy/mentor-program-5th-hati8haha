@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="utf-8">
+
+
+  <title>新拖延運動報名表單</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+  <div class="wrapper">
+    <h1>新拖延運動報名表單</h1>
+    <div class="info">
+      活動日期：2020/12/10 ~ 2020/12/11
+      <br>
+      活動地點：台北市大安區新生南路二段1號
+    </div>
+    <div class="remind">* 必填</div>
+    <form>
+      <div class="question">
+        <h2>暱稱 <span class="remind__symbol">*</span></h2>
+        <input type="text" class="required__field text__input" placeholder="您的回答">
+      </div>
+      <div class="question">
+        <h2>電子郵件 <span class="remind__symbol">*</span></h2>
+        <input type="email" class="required__field text__input" placeholder="您的電子郵件">
+      </div>
+      <div class="question">
+        <h2>手機號碼 <span class="remind__symbol">*</span></h2>
+        <input type="text" class="required__field text__input" placeholder="您的手機號碼">
+      </div>
+      <div class="question">
+        <h2>報名類型 <span class="remind__symbol">*</span></h2>
+        <div class="question__radio">
+          <input type="radio" class="required__field radio__input" name="choice__content"> 躺在床上用想像力實作<br>
+          <input type="radio" class="required__field radio__input" name="choice__content"> 趴在地上滑手機找現成的
+        </div>
+      </div>
+      <div class="question">
+        <h2>怎麼知道這個活動的？ <span class="remind__symbol">*</span></h2>
+        <input type="text" class="required__field text__input" placeholder="您的回答">
+      </div>
+      <div class="question other">
+        <h2>其他</h2>
+        <div class="additional__explanation">
+          對活動的一些建議
+        </div>
+        <input type="text" placeholder="您的回答">
+      </div>
+      <div class="question">
+        <input type="submit" value="提交" onclick="return false">
+      </div>
+      <div class="additional__explanation">
+        請勿透過表單送出您的密碼。
+      </div>
+    </form>
+  </div>
+  <footer>© 2020 © Copyright. All rights Reserved.</footer>
+  <script type="text/javascript">
+    document.querySelector('.question > input[type=submit]').addEventListener('click', (e) => {
+      clearNotification()
+      let textData = document.forms[0].querySelectorAll('.required__field.text__input')
+      let radioData = document.forms[0].querySelectorAll('.required__field.radio__input')
+      let submitPass = true
+      for (let i = 0; i < textData.length; i++) {
+        if (textData[i].value === '') {
+          notify(i, textData)
+          submitPass = false
+          e.preventDefault()
+        }
+      }
+      if (!(radioData[0].checked || radioData[1].checked)) {
+        notifyRadio(radioData)
+        submitPass = false
+        e.preventDefault()
+      }
+      if (submitPass) {
+        alertData(textData, radioData)
+        document.forms[0].submit()
+      }
+      }
+    )
+
+    let clearNotification = () => {
+      let notificationGet = document.querySelectorAll('.notification')
+      for (i = 0; i < notificationGet.length; i++) {
+        notificationGet[i].remove()
+      }
+    }
+
+    let notify = (i, data) => {
+      let div = document.createElement('div')
+      div.classList.add('notification')
+      div.innerHTML = `此欄為必填`
+      data[i].parentNode.appendChild(div)
+    }
+
+    let notifyRadio = (data) => {
+      let div = document.createElement('div')
+      div.classList.add('notification')
+      div.innerHTML = `此欄為必填`
+      data[1].parentNode.appendChild(div)
+    }
+
+    let alertData = (textValue, radioValue) => {
+      let textValueArr = []
+      let radioValueText = ''
+      let otherValue = document.forms[0].querySelector('.question.other > input').value
+      for (let i = 0; i < textValue.length; i++) {
+        textValueArr.push(textValue[i].value)
+      }
+      if (radioValue[0].checked) {
+        radioValueText = '躺在床上用想像力實作'
+      } else {
+        radioValueText = '趴在地上滑手機找現成的'
+      }
+      alert(`
+        您輸入的資料為：\n
+        暱稱：${textValueArr[0]}
+        電子郵件：${textValueArr[1]}
+        手機號碼：${textValueArr[2]}
+        報名類型：${radioValueText}
+        怎麼知道這個活動的：${textValueArr[3]}
+        其他：${otherValue}
+`)
+    }
+
+  </script>
+</body>
+</html>
