@@ -1,0 +1,45 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="normalize.css">
+  <link rel="stylesheet" href="bootstrap-min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="scripts.js"></script>
+
+  <style type="text/css">
+    .card {
+      margin: 5px 0;
+    }
+    form > button {
+      margin: 5px 0;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="container">
+    <form class="add-comment-form">
+        <div class="nickname-input">
+          <label for="nicknameID" class="form-label">暱稱</label>
+          <input type="text" class="form-control" id="nicknameID" name="nickname">
+        </div>
+      <div class="discussion">
+        <label for="comment__textarea" class="form-label">留言內容</label>
+        <textarea class="form-control" id="comment__textarea" rows="3" name="content"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <div class="comments">
+    </div>
+    <button type="button" class="load-more btn btn-outline-primary">載入更多</button>
+  </div>
+</body>
+
+</html>
