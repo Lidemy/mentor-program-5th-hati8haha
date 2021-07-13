@@ -1,0 +1,60 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="normalize.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="script.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="text-center fs-1 fw-bold mt-5">todos</div>
+    <form class="add-comment-form row justify-content-md-center">
+      <div class="col col-lg-6 my-3 px-0">
+        <input type="text" class="todos-value form-control p-2" name="todos" placeholder="請輸入代辦事項並按下 Enter">
+      </div>
+    </form>
+    <div class="row justify-content-md-center mb-1">
+      <div class="col col-lg-6 px-0 d-flex">
+        <div class="btn-group flex-grow-1 pe-1 todos-filter" role="group" aria-label="Basic radio toggle button group">
+          <input type="radio" class="btn-check" name="btnradio" id="all-todos-btn" autocomplete="off" checked>
+          <label class="btn btn-outline-primary" for="all-todos-btn">All</label>
+
+          <input type="radio" class="btn-check" name="btnradio" id="active-todos-btn" autocomplete="off">
+          <label class="btn btn-outline-primary" for="active-todos-btn">Active</label>
+
+          <input type="radio" class="btn-check" name="btnradio" id="completed-todos-btn" autocomplete="off">
+          <label class="btn btn-outline-primary" for="completed-todos-btn">Completed</label>
+        </div>
+        <div class="btn-group edit-all-btn" role="group" aria-label="Basic mixed styles example">
+          <button type="button" class="btn btn-outline-secondary all-completed-btn">All completed</button>
+          <button type="button" class="btn btn-outline-danger clear-completed-btn">Clear completed</button>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-md-center">
+      <div class="todos-container list-group col col-lg-6 px-0">
+        <label class="list-group-item d-flex align-items-center justify-content-between todos-item todos-active">
+          <div>
+            <input class="form-check-input me-1" type="checkbox" value="">
+            <span class="todos__text">可點選按鈕編輯或刪除</span>
+          </div>
+          <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+            <button type="button" class="edit__btn btn border-0 p-1 flex-grow-0"><i class="bi bi-pen text-primary"></i></button>
+            <button type="button" class="remove__btn btn border-0 p-1 flex-grow-0"><i class="bi bi-trash text-danger"></i></button>
+          </div>
+        </label>
+      </div>
+    </div>
+    <div class="row justify-content-md-center">
+      <div class="col col-lg-6 uncomplete-count"></div>
+    </div>
+
+</body>
+
+</html>
