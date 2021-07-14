@@ -1,0 +1,33 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="main.js"></script>
+  <script type="text/javascript">
+  function importData() {
+    commentPlugin.init({
+      targetNode: document.querySelector('body'),
+      siteKey: 'a',
+      apiUrl: 'http://mentor-program.co/mtr04group5/hati8haha/week13/hw2',
+      containerSelector: '.comments-area'
+    })
+  }
+
+  function ready(fn) {
+    if (document.readyState != 'loading'){
+      fn();
+    } else {
+      document.addEventListener('DOMContentLoaded', fn);
+    }
+  }
+
+  ready(importData)
+</script>
+</head>
+
+<body>
+</body>
+
+</html>
