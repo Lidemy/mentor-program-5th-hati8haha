@@ -18,6 +18,22 @@ module.exports = {
     ecmaVersion: 2018
   },
   rules: {
-    'no-console': 'off'
+    'no-console': 'off',
+    'import/prefer-default-export': 'off',
+    'import/extensions': [
+      'error',
+      'ignorePackages',
+      {
+        js: 'never'
+      }
+    ]
+  },
+  settings: {
+    'import/resolver': {
+      node: {
+        extensions: ['.js'],
+        moduleDirectory: ['node_modules', 'src/']
+      }
+    }
   }
 }

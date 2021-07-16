@@ -1,0 +1,256 @@
+body {
+  font-family: sans-serif;
+}
+
+.background {
+  position: absolute;
+  background:  linear-gradient(-45deg, #a3ddcb, #03506f, #0a043c);
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  color: transparent;
+}
+
+
+.navbar {
+  box-shadow: -1.4px -1.4px 6px 0 #97a2a0;
+  z-index: 5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 84px;
+  background: #0a043c;
+  padding: 0px 24px;
+  position: relative;
+}
+
+.navbar__site-name {
+  color: white;
+  font-size: 24px;
+}
+
+.navbar__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  font-size: 18px;
+}
+
+.navbar__list li {
+  display: flex;
+  margin-left: 12px;
+  border-radius: 8px;
+  transition: background 0.2s;
+  background: white;
+  height: 32px;
+  align-items: center;
+  padding: 4px 12px 4px;
+  cursor: pointer;
+}
+
+.navbar__list li:hover {
+  background: #03506f;
+  color: #ffe3de;
+}
+
+.wrapper {
+  display: flex;
+  margin: 0 auto;
+  padding: 36px 36px;
+  flex-direction: column;
+}
+
+.wrapper.on {
+  background:  linear-gradient(-45deg, #a3ddcb, #03506f, #0a043c);
+}
+
+.content-head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 36px;
+}
+
+.content-head__game {
+  font-size: 36px;
+  color: white;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.content-head__description {
+  font-size: 24px;
+  color: white;
+  text-align: center;
+}
+
+.content-head__description.init {
+  display: none;
+}
+
+.stream {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.stream__init {
+  display: flex;
+  font-size: 72px;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  min-height: 700px;
+  text-align: center;
+  position: relative;
+  transition: all 0.5s;
+}
+
+.stream__init:after {
+  content: "選個遊戲按下去就對了↗";
+  color: transparent;
+  position: absolute;
+  font-size: 12px;
+  transition: all 0.6s;
+}
+
+.stream__init:hover:after {
+  color: white;
+  transform: translate(190px, -350px) scale(4);
+}
+
+
+.stream-block {
+  max-width: 320px;
+  min-width: 220px;
+  min-height: 220px;
+  overflow: hidden;
+  border-radius: 12px;
+  margin: 0px 12px 24px;
+  background: linear-gradient(45deg, black, transparent);
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.stream-block:hover {
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.6);
+  transform: translate(-5px, -5px);
+}
+
+.stream-block img {
+  max-width: 100%;
+  height: auto;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.stream-block img:hover {
+  transform: scale(1.1);
+}
+
+
+.stream__info {
+  display: flex;
+  justify-content: space-between;
+  margin: 12px 6px 6px;
+}
+.stream__avatar {
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  margin-right: 12px;
+}
+
+.stream__info-text {
+  flex-shrink: 1;
+  flex-grow: 1;
+  max-width: 84%;
+}
+
+.stream__info-status {
+  max-width: 100%;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: white;
+}
+
+.stream__info-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.stream__info-name {
+  font-size: 16px;
+  margin-right: 12px;
+  color: ghostwhite;
+}
+.stream__info-viewers {
+  font-size: 8px;
+  color: white;
+}
+
+.load-streams.hide {
+  display: none;
+}
+
+.load-streams {
+  display: flex;
+  justify-content: center;
+}
+
+.load-button {
+  cursor: pointer;
+}
+
+.empty-stream-block {
+  min-width: 320px;
+  min-height: 1px;
+  margin: 0px 12px 24px;
+
+}
+
+@media(max-width: 900px) {
+  .navbar {
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0px;
+  }
+
+  .navbar__site-name {
+    margin: 10px 0px 10px;
+  }
+
+  .navbar__list {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .navbar__list li {
+    display: flex;
+    flex: 1;
+    margin-left: 0;
+    border-radius: 0;
+    align-items: center;
+    justify-content: center;
+  }
+  .stream__init {
+    font-size: 36px;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+  }
+
+  .stream__init:after {
+    display: none;
+  }
+
