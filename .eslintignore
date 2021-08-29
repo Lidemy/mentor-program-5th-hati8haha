@@ -1,3 +1,7 @@
 examples/
 homeworks/week13/hw2/dist/main.js
 homeworks/week13/hw2/*.config.js
+homeworks/week17/hw1/migrations/*.js
+homeworks/week17/hw1/models/*.js
+homeworks/week17/hw2/migrations/*.js
+homeworks/week17/hw2/models/*.js
